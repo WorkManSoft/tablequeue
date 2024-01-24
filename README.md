@@ -1,4 +1,4 @@
-# TableQueue
+er# TableQueue
 
 TableQueue (TQ for short) is a simple table based queue module. It's ment to be used where full blown messagingsystems are simply overkill.
 
@@ -21,9 +21,9 @@ TableQueue (TQ for short) is a simple table based queue module. It's ment to be 
 
 ```mermaid
   sequenceDiagram;
-    Alice->>John: Hello John, how are you;
-    John-->>Alice: Great;
-    Alice-)John: See you later;
+    Sender->>TQ: Send a message to the bus;
+    TQ-->>Sender: Message received with messageid x;
+    Sender-)John: See you later;
 ```
  
 ### Fetching message from bus
