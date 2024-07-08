@@ -11,6 +11,13 @@ In the sample we have:
 * EVENTSTORE_TEMPLATE, used as a template for creating EVENTSTORE_<app queue table>
 * EVENTSTORE_GUARDIAN, our internal table used for our guardian features
 
+The primary Event table EVENTSTORE have a trigger which in turn add events to the subscribing tables.
+An app MUST handle all the events in order and delete them after they have consumed them.
+The EVENTSTORE is complete or based in conjunction with EVENTSTORESS and subsequent EVENTSTORE data.
+
+The target for this is small applications and you should use a proper message queue for larger scale applications.
+
+
 ```mermaid
   graph TD;
       A-->B;
