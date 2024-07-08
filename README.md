@@ -1,6 +1,15 @@
-er# TableQueue
+# TableQueue
 
 TableQueue (TQ for short) is a simple table based queue module. It's ment to be used where full blown messagingsystems are simply overkill.
+It is based on general idea with Event Sourcing having one table with all events saved to it Event Store.
+
+In TQ we have one table called EVENTSTORE and one called EVENTSTORESS (daily snapshot).
+For each app processing messages we create seperate tables.
+In the sample we have:
+
+* EVENTSTORE_SNAPSHOT, used for service populating snapshot EVENTSTORESS
+* EVENTSTORE_TEMPLATE, used as a template for creating EVENTSTORE_<app queue table>
+* EVENTSTORE_GUARDIAN, our internal table used for our guardian features
 
 ```mermaid
   graph TD;
